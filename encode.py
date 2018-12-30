@@ -3,4 +3,4 @@
 import codecs
 
 enc = "Pnrfne SYNT{PGS_Rnfl}"
-print codecs.decode(enc, 'rot13')
+print codecs.decode(enc, 'rot13') # rot13 is seaser encryption.
