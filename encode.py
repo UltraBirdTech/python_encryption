@@ -10,4 +10,4 @@ if (len(argv) != 2):
     exit()
 
 enc = argv[1]
-print codecs.decode(enc, 'rot13') # rot13 is seaser encryption.
+print codecs.decode(enc, 'rot13') # rot13 is Ceaser encryption.
