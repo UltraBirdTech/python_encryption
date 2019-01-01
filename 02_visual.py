@@ -19,14 +19,13 @@ def enc_Vigenere( target, key ):
         n = n + 1
     return result
 
-def dec_Vigenere( target ):
+def dec_Vigenere( target, key ):
     result = ''
     cycle = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ{}_'
     remove_num = 0
     for n in range(0, len(target)):
         index1 = cycle.find(key[(n - remove_num) % len(key)])
         if ((target[n] == '') or (target[n]== '.')):
-            index1 = cycle.find(key[(n - remove_num) % len(key)])
             result = result + target[n]
             remove_num +=1
         else:
@@ -38,21 +37,22 @@ def dec_Vigenere( target ):
         n = n + 1
     return result
 
-target = 'There are four pencils in the pencil case.'.upper()
-print target
-key = 'FLAG{CTF_FINDKEY}'.upper()
-print key
-enc_str = enc_Vigenere( target, key )
-print enc_str
-
-print dec_Vigenere( enc_str )
 
 def main():
     
-    argv = sys.argv
+#    argv = sys.argv
+#    if (len(argv) != 2):
+#        print 'Argument is less. Please add char'
+#        exit()
+#    enc = argv[1]
 
-    if (len(argv) != 2):
-        print 'Argument is less. Please add char'
-        exit()
+    target = 'There are four pencils in the pencil case.'.upper()
+    print target
+    key = 'FLAG{CTF_FINDKEY}'.upper()
+    print key
+    enc_str = enc_Vigenere( target, key )
+    print enc_str
 
-    enc = argv[1]
+    print dec_Vigenere( enc_str, key )
+
+main()
