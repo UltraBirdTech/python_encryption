@@ -83,7 +83,7 @@ class Vigenere:
         print self.decryption_result
     
     def calulate_index():
-        # soemthin write
+        # soemthin write for child class.
         return
 
 class EncVigenere(Vigenere):
