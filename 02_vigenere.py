@@ -61,8 +61,7 @@ class Vigenere:
                     index = index % len(self.cycle)
                 result = result + self.cycle[index]
             n = n + 1
-        self.encryption_result = result
-        print self.encryption_result
+        return result
 
     def encryption(self, target, key):
         result = ''
@@ -113,14 +112,15 @@ class EncVigenere(Vigenere):
         # something write
 
     def excution():
-        super().excution()
+        result = super().excution()
+        self.encryption_result = result
         return
 
     def calculate_index(i1, i2):
         return i2 + i1
 
     def display():
-        #something write
+        print self.encryption_result
         return 
 
 class DecVigenere(Vigenere):
@@ -129,13 +129,16 @@ class DecVigenere(Vigenere):
         return
         # something write
 
-    def excution():
+    def excution()::
+        result = super().excution()
+        self.descryption_result = result
         return
 
     def calculate_index(i1, i2):
         return i2 - i1
 
     def display():
+        print self.descryption_result
         return
 
 def main():
