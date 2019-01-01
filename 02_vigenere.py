@@ -39,8 +39,63 @@ def dec_Vigenere( target, key ):
         n = n + 1
     return result
 
-class vigenere:
+class Vigenere:
     def __init__(self):
+      self.result = ''
+      self.cycle = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ{}_'
+      self.encription = ''
+      self.decription = ''
+    
+    def encryption(target, key):
+        result = ''
+        remove_num = 0
+        for n in range(0, len(target)):
+            index1 = self.cycle.find(key[(n - remove_num) % len(key)])
+            if ((target[n] == '') or (target[n]== '.')):
+                result = result + target[n]
+                remove_num +=1
+            else:
+                index2 = self.cycle.find(target[n])
+                index = index2 - index1
+                if (index >= len(self.cycle)):
+                    index = index % len(self.cycle)
+                result = result + self.cycle[index]
+            n = n + 1
+        self.encription = result
+        print self.encription
+
+    def descryption(target, key):
+        result = ''
+        remove_num = 0
+        for n in range(0, len(target)):
+            index1 = self.cycle.find(key[(n - remove_num) % len(key)])
+            if ((target[n] == '') or (target[n]== '.')):
+                result = result + target[n]
+                remove_num +=1
+            else:
+                index2 = self.cycle.find(target[n])
+                index = index2 - index1
+                if (index >= len(self.cycle)):
+                    index = index % len(self.cycle)
+                result = result + self.cycle[index]
+            n = n + 1
+        self.decription = result
+        print self.decription
+    
+    def calulate_index():
+        # soemthin write
+        return
+
+class EncVigenere(Vigenere):
+    def __init__():
+        return
+        # something write
+
+
+class DecVigenere(Vigenere):
+    def __init__():
+        return
+        # something write
 
 
 def main():
