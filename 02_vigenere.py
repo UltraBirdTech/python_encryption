@@ -1,6 +1,8 @@
 #! /usr/bin/env python
 # -*- coding: utf8 -*- #
 
+import sys
+
 def enc_Vigenere( target, key ):
     result = ''
     cycle = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ{}_'
@@ -37,10 +39,14 @@ def dec_Vigenere( target, key ):
         n = n + 1
     return result
 
+class vigenere:
+    def __init__(self):
+
 
 def main():
     
-#    argv = sys.argv
+    argv = sys.argv
+#    print argv
 #    if (len(argv) != 2):
 #        print 'Argument is less. Please add char'
 #        exit()
