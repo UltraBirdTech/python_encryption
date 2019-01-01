@@ -56,7 +56,7 @@ class Vigenere:
                 remove_num +=1
             else:
                 index2 = self.cycle.find(target[n])
-                index = index2 - index1
+                index = index2 + index1
                 if (index >= len(self.cycle)):
                     index = index % len(self.cycle)
                 result = result + self.cycle[index]
@@ -91,12 +91,16 @@ class EncVigenere(Vigenere):
         return
         # something write
 
+    def calculate_index(i1, i2):
+        return i2 + i1
 
 class DecVigenere(Vigenere):
     def __init__():
         return
         # something write
 
+    def calculate_index(i1, i2):
+        return i2 - i1
 
 def main():
     
