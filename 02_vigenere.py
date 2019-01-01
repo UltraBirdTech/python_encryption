@@ -43,10 +43,10 @@ class Vigenere:
     def __init__(self):
       self.result = ''
       self.cycle = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ{}_'
-      self.encription = ''
-      self.decription = ''
+      self.encryption_result = ''
+      self.decryption_result = ''
     
-    def encryption(target, key):
+    def encryption(self, target, key):
         result = ''
         remove_num = 0
         for n in range(0, len(target)):
@@ -61,10 +61,10 @@ class Vigenere:
                     index = index % len(self.cycle)
                 result = result + self.cycle[index]
             n = n + 1
-        self.encription = result
-        print self.encription
+        self.encryption_result = result
+        print self.encryption_result
 
-    def descryption(target, key):
+    def descryption(self, target, key):
         result = ''
         remove_num = 0
         for n in range(0, len(target)):
@@ -79,8 +79,8 @@ class Vigenere:
                     index = index % len(self.cycle)
                 result = result + self.cycle[index]
             n = n + 1
-        self.decription = result
-        print self.decription
+        self.decryption_result = result
+        print self.decryption_result
     
     def calulate_index():
         # soemthin write
@@ -115,9 +115,13 @@ def main():
     print target
     key = 'FLAG{CTF_FINDKEY}'.upper()
     print key
-    enc_str = enc_Vigenere( target, key )
-    print enc_str
 
-    print dec_Vigenere( enc_str, key )
+    vigenere = Vigenere()
+    print vigenere
+    vigenere.encryption(target, key)
+    vigenere.descryption(vigenere.encryption_result, key)
+#    enc_str = enc_Vigenere( target, key )
+#    print enc_str
+#    print dec_Vigenere( enc_str, key )
 
 main()
