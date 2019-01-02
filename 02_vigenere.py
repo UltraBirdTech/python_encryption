@@ -24,42 +24,6 @@ class Vigenere(object):
             n = n + 1
         return result
 
-    def encryption(self, target, key):
-        result = ''
-        remove_num = 0
-        for n in range(0, len(target)):
-            index1 = self.cycle.find(key[(n - remove_num) % len(key)])
-            if ((target[n] == '') or (target[n]== '.')):
-                result = result + target[n]
-                remove_num +=1
-            else:
-                index2 = self.cycle.find(target[n])
-                index = index2 + index1
-                if (index >= len(self.cycle)):
-                    index = index % len(self.cycle)
-                result = result + self.cycle[index]
-            n = n + 1
-        self.encryption_result = result
-        print self.encryption_result
-
-    def descryption(self, target, key):
-        result = ''
-        remove_num = 0
-        for n in range(0, len(target)):
-            index1 = self.cycle.find(key[(n - remove_num) % len(key)])
-            if ((target[n] == '') or (target[n]== '.')):
-                result = result + target[n]
-                remove_num +=1
-            else:
-                index2 = self.cycle.find(target[n])
-                index = index2 - index1
-                if (index >= len(self.cycle)):
-                    index = index % len(self.cycle)
-                result = result + self.cycle[index]
-            n = n + 1
-        self.decryption_result = result
-        print self.decryption_result
-    
     def calculate_index(self, i2, i1):
         # soemthing write for child class.
         print 'something write for child class.'
@@ -113,10 +77,6 @@ def main():
     print target
     key = 'FLAG{CTF_FINDKEY}'.upper()
     print key
-
-#    vigenere = Vigenere()
-#    vigenere.encryption(target, key)
-#    vigenere.descryption(vigenere.encryption_result, key)
 
     enc_vigenere = EncVigenere()
     enc_vigenere.exe(target, key)
