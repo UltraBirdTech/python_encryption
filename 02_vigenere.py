@@ -1,9 +1,13 @@
 #! /usr/bin/env python
 # -*- coding: utf8 -*- #
 
+CYCLE =  'ABCDEFGHIJKLMNOPQRSTUVWXYZ{}_'
+TARGET = 'There are four pencils in the pencil case.'
+KEY = 'FLAG{CTF_FINDKEY}'
+
 class Vigenere(object):
     def __init__(self):
-      self.cycle = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ{}_'
+      self.cycle = CYCLE
     
     def execution(self, target, key):
         result = ''
@@ -35,7 +39,7 @@ class EncVigenere(Vigenere):
     def __init__(self):
         super(Vigenere, self).__init__()
         self.result = ''
-        self.cycle = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ{}_'
+        self.cycle = CYCLE
         return
 
     def calculate_index(self, i1, i2):
@@ -45,16 +49,16 @@ class DecVigenere(Vigenere):
     def __init__(self):
         super(Vigenere, self).__init__()
         self.result = ''
-        self.cycle = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ{}_'
+        self.cycle = CYCLE
         return
 
     def calculate_index(self, i1, i2):
         return i2 - i1
 
 def main():
-    target = 'There are four pencils in the pencil case.'.upper()
+    target = TARGET.upper()
     print target
-    key = 'FLAG{CTF_FINDKEY}'.upper()
+    key = KEY.upper()
     print key
 
     enc_vigenere = EncVigenere()
