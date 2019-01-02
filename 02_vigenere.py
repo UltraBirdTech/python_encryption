@@ -6,9 +6,6 @@ TARGET = 'There are four pencils in the pencil case.'
 KEY = 'FLAG{CTF_FINDKEY}'
 
 class Vigenere(object):
-    def __init__(self):
-      self.cycle = CYCLE
-    
     def execution(self, target, key):
         result = ''
         remove_num = 0
@@ -37,7 +34,6 @@ class Vigenere(object):
 
 class EncVigenere(Vigenere):
     def __init__(self):
-        super(Vigenere, self).__init__()
         self.result = ''
         self.cycle = CYCLE
 
@@ -46,7 +42,6 @@ class EncVigenere(Vigenere):
 
 class DecVigenere(Vigenere):
     def __init__(self):
-        super(Vigenere, self).__init__()
         self.result = ''
         self.cycle = CYCLE
 
