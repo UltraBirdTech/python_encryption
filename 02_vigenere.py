@@ -22,7 +22,7 @@ class Vigenere(object):
                     index = index % len(self.cycle)
                 result = result + self.cycle[index]
             n = n + 1
-        return result
+        self.result = result
 
     def calculate_index(self, i2, i1):
         print 'something write for child class.'
@@ -36,11 +36,8 @@ class Vigenere(object):
 class EncVigenere(Vigenere):
     def __init__(self):
         super(Vigenere, self).__init__()
+        self.result = ''
         self.cycle = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ{}_'
-        return
-
-    def exe(self, target, key):
-        self.result = self.execution(target, key)
         return
 
     def calculate_index(self, i1, i2):
@@ -49,11 +46,8 @@ class EncVigenere(Vigenere):
 class DecVigenere(Vigenere):
     def __init__(self):
         super(Vigenere, self).__init__()
+        self.result = ''
         self.cycle = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ{}_'
-        return
-
-    def exe(self, target, key):
-        self.result = self.execution(target, key)
         return
 
     def calculate_index(self, i1, i2):
@@ -74,11 +68,11 @@ def main():
     print key
 
     enc_vigenere = EncVigenere()
-    enc_vigenere.exe(target, key)
+    enc_vigenere.execution(target, key)
     enc_vigenere.display()
 
     dec_vigenere = DecVigenere()
-    dec_vigenere.exe(enc_vigenere.result, key)
+    dec_vigenere.execution(enc_vigenere.result, key)
     dec_vigenere.display()
 
 main()
