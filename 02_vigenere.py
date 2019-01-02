@@ -20,7 +20,7 @@ class Vigenere(object):
                 if (index >= len(self.cycle)):
                     index = index % len(self.cycle)
                 result = result + self.cycle[index]
-            n = n + 1
+            n += 1
         self.result = result
 
     def calculate_index(self, i2, i1):
