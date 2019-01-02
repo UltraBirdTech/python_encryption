@@ -5,10 +5,7 @@ import sys
 
 class Vigenere(object):
     def __init__(self):
-      self.result = ''
       self.cycle = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ{}_'
-      self.encryption_result = ''
-      self.decryption_result = ''
     
     def execution(self, target, key):
         result = ''
