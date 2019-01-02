@@ -29,6 +29,10 @@ class Vigenere(object):
         exit()
         return
 
+    def display(self):
+        print self.result
+        return
+
 class EncVigenere(Vigenere):
     def __init__(self):
         super(Vigenere, self).__init__()
@@ -42,10 +46,6 @@ class EncVigenere(Vigenere):
     def calculate_index(self, i1, i2):
         return i2 + i1
 
-    def display(self):
-        print self.result
-        return 
-
 class DecVigenere(Vigenere):
     def __init__(self):
         super(Vigenere, self).__init__()
@@ -58,10 +58,6 @@ class DecVigenere(Vigenere):
 
     def calculate_index(self, i1, i2):
         return i2 - i1
-
-    def display(self):
-        print self.result
-        return
 
 def main():
     
