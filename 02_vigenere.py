@@ -57,9 +57,9 @@ class DecVigenere(Vigenere):
 
 def main():
     target = TARGET.upper()
-    print target
+    print 'target: ' + target
     key = KEY.upper()
-    print key
+    print 'key: ' + key
 
     enc_vigenere = EncVigenere()
     enc_vigenere.execution(target, key)
