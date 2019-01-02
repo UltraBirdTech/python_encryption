@@ -3,7 +3,7 @@
 
 import sys
 
-class Vigenere:
+class Vigenere(object):
     def __init__(self):
       self.result = ''
       self.cycle = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ{}_'
@@ -72,19 +72,18 @@ class Vigenere:
 class EncVigenere(Vigenere):
     def __init__(self):
         super(Vigenere, self).__init__()
-        return
-        # something write
-
-    def excution(self, target, key):
-        result = super().excution(self, target, key)
-        self.encryption_result = result
+        self.cycle = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ{}_'
         return
 
-    def calculate_index(i1, i2):
+    def exe(self, target, key):
+        self.result = self.execution(target, key)
+        return
+
+    def calculate_index(self, i1, i2):
         return i2 + i1
 
-    def display():
-        print self.encryption_result
+    def display(self):
+        print self.result
         return 
 
 class DecVigenere(Vigenere):
@@ -124,7 +123,7 @@ def main():
 #    vigenere.descryption(vigenere.encryption_result, key)
 
     enc_vigenere = EncVigenere()
-    enc_vigenere.excute()
+    enc_vigenere.exe(target, key)
     enc_vigenere.display()
 
 main()
