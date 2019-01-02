@@ -1,8 +1,6 @@
 #! /usr/bin/env python
 # -*- coding: utf8 -*- #
 
-import sys
-
 class Vigenere(object):
     def __init__(self):
       self.cycle = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ{}_'
@@ -54,14 +52,6 @@ class DecVigenere(Vigenere):
         return i2 - i1
 
 def main():
-    
-    argv = sys.argv
-#    print argv
-#    if (len(argv) != 2):
-#        print 'Argument is less. Please add char'
-#        exit()
-#    enc = argv[1]
-
     target = 'There are four pencils in the pencil case.'.upper()
     print target
     key = 'FLAG{CTF_FINDKEY}'.upper()
