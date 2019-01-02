@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 # -*- coding: utf8 -*- #
 
-CYCLE =  'ABCDEFGHIJKLMNOPQRSTUVWXYZ{}_'
+CYCLE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ{}_'
 TARGET = 'There are four pencils in the pencil case.'
 KEY = 'FLAG{CTF_FINDKEY}'
 
