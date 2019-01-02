@@ -40,7 +40,6 @@ class EncVigenere(Vigenere):
         super(Vigenere, self).__init__()
         self.result = ''
         self.cycle = CYCLE
-        return
 
     def calculate_index(self, i1, i2):
         return i2 + i1
@@ -50,7 +49,6 @@ class DecVigenere(Vigenere):
         super(Vigenere, self).__init__()
         self.result = ''
         self.cycle = CYCLE
-        return
 
     def calculate_index(self, i1, i2):
         return i2 - i1
