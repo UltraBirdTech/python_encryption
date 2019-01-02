@@ -25,7 +25,6 @@ class Vigenere(object):
         return result
 
     def calculate_index(self, i2, i1):
-        # soemthing write for child class.
         print 'something write for child class.'
         exit()
         return
