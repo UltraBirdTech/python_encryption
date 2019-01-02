@@ -6,9 +6,10 @@ TARGET = 'There are four pencils in the pencil case.'
 KEY = 'FLAG{CTF_FINDKEY}'
 
 class Vigenere(object):
+    REMOVE_NUM_INITIALIZE = 0
     def execution(self, target, key):
         result = ''
-        remove_num = 0
+        remove_num = self.REMOVE_NUM_INITIALIZE
         for n in range(0, len(target)):
             index1 = self.cycle.find(key[(n - remove_num) % len(key)])
             if ((target[n] == '') or (target[n]== '.')):
