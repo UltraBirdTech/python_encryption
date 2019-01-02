@@ -20,7 +20,7 @@ class Vigenere(object):
                 remove_num +=1
             else:
                 index2 = self.cycle.find(target[n])
-                index = self.calculate_index(index2, index1)
+                index = self.calculate_index(index1, index2)
                 if (index >= len(self.cycle)):
                     index = index % len(self.cycle)
                 result = result + self.cycle[index]
@@ -89,19 +89,18 @@ class EncVigenere(Vigenere):
 class DecVigenere(Vigenere):
     def __init__(self):
         super(Vigenere, self).__init__()
-        return
-        # something write
-
-    def excution():
-        result = super().excution(self, target, key)
-        self.descryption_result = result
+        self.cycle = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ{}_'
         return
 
-    def calculate_index(i1, i2):
+    def exe(self, target, key):
+        self.result = self.execution(target, key)
+        return
+
+    def calculate_index(self, i1, i2):
         return i2 - i1
 
-    def display():
-        print self.descryption_result
+    def display(self):
+        print self.result
         return
 
 def main():
@@ -125,5 +124,9 @@ def main():
     enc_vigenere = EncVigenere()
     enc_vigenere.exe(target, key)
     enc_vigenere.display()
+
+    dec_vigenere = DecVigenere()
+    dec_vigenere.exe(enc_vigenere.result, key)
+    dec_vigenere.display()
 
 main()
