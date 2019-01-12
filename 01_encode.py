@@ -1,5 +1,6 @@
 # [DOCS]
 # https://docs.python.jp/3/library/codecs.html
+# rot暗号を解くためのスクリプト
 import codecs
 import sys
 
