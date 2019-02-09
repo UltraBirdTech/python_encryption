@@ -7,8 +7,8 @@ import sys
 argv = sys.argv
 
 if (len(argv) != 2):
-    print 'Argument is less. Please add char'
+    print('Argument is less. Please add char')
     exit()
 
 enc = argv[1]
-print codecs.decode(enc, 'rot13') # rot13 is Ceaser encryption.
+print(codecs.decode(enc, 'rot13')) # rot13 is Ceaser encryption.
