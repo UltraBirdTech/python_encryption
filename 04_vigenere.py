@@ -25,12 +25,12 @@ class Vigenere(object):
         self.result = result
 
     def calculate_index(self, i2, i1):
-        print 'something write for child class.'
+        print('something write for child class.')
         exit()
         return
 
     def display(self):
-        print self.result
+        print(self.result)
         return
 
 class EncVigenere(Vigenere):
@@ -51,9 +51,9 @@ class DecVigenere(Vigenere):
 
 def main():
     target = TARGET.upper()
-    print 'target: ' + target
+    print('target: ' + target)
     key = KEY.upper()
-    print 'key: ' + key
+    print('key: ' + key)
 
     enc_vigenere = EncVigenere()
     enc_vigenere.execution(target, key)
