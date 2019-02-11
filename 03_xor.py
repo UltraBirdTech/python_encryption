@@ -10,9 +10,10 @@ key = 'GuessKey'
 hex_dump(map(ord, target))
 
 def xor(K,C):
+    list(C)
     P = []
-    for i in range(len(C)):
-        v = C[i]^K[i % len(K)]
+    for i in range(len(list(C))):
+        v = C[i]^K[i % len(list(K))]
         P.append( v )
     return P
 
